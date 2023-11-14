@@ -18,6 +18,9 @@ Rails.application.routes.draw do
 
   get "refresh-session", to: "sessions#refresh", as: :refresh_session
 
+  # Policies
+  mount Irp::Engine, at: "/irp"
+
   # Used to constrain claim journey routing so only slugs
   # that are part of a policy’s slug sequence are routed.
   restrict_to_sequence_slugs = Class.new {

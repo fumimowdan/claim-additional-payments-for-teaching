@@ -32,7 +32,13 @@ class PolicyConfiguration < ApplicationRecord
       # view_path - folder where view templates are, unless folder is the same as routing-name
       view_path: "early_career_payments",
       i18n_namespace: "early_career_payments"
-    }
+    },
+    {
+      routing_name: "irp",
+      slugs: [],
+      policies: [Irp],
+      i18n_namespace: "irp"
+    },
   ].freeze
 
   # Use AcademicYear as custom ActiveRecord attribute type

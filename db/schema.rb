@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_10_110119) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_15_142921) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
   enable_extension "pgcrypto"
@@ -166,6 +166,38 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_10_110119) do
   create_table "file_uploads", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.uuid "uploaded_by_id"
     t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "irp_forms", force: :cascade do |t|
+    t.string "given_name"
+    t.string "middle_name"
+    t.string "family_name"
+    t.string "email_address"
+    t.string "phone_number"
+    t.date "date_of_birth"
+    t.string "nationality"
+    t.string "sex"
+    t.string "passport_number"
+    t.string "subject"
+    t.string "visa_type"
+    t.date "date_of_entry"
+    t.date "start_date"
+    t.string "address_line_1"
+    t.string "address_line_2"
+    t.string "city"
+    t.string "postcode"
+    t.string "application_route"
+    t.boolean "state_funded_secondary_school"
+    t.boolean "one_year"
+    t.string "school_name"
+    t.string "school_headteacher_name"
+    t.string "school_address_line_1"
+    t.string "school_address_line_2"
+    t.string "school_city"
+    t.string "school_postcode"
+    t.boolean "student_loan"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

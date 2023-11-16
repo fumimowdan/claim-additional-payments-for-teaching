@@ -22,6 +22,7 @@ PATH
       govuk_design_system_formbuilder
       phonelib
       rails (>= 7.0.4)
+      rubyXL (~> 3.4)
       uk_postcode
 
 GEM
@@ -423,6 +424,9 @@ GEM
       rubocop-ast (>= 0.4.0)
     ruby-progressbar (1.13.0)
     ruby2_keywords (0.0.5)
+    rubyXL (3.4.25)
+      nokogiri (>= 1.10.8)
+      rubyzip (>= 1.3.0)
     rubyzip (2.3.2)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)

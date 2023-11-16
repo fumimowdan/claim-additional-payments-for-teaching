@@ -17,6 +17,8 @@ class Task < ApplicationRecord
     payroll_details
     matching_details
     payroll_gender
+    home_office
+    school_checks
   ].freeze
 
   belongs_to :claim

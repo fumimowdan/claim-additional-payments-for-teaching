@@ -128,7 +128,7 @@ module Admin
     def task_status_tag(claim, task_name)
       task = claim.tasks.detect { |t| t.name == task_name }
 
-      if task.nil?
+      if task.nil? || task.passed.blank?
         status = "Incomplete"
         status_colour = "grey"
       elsif task.passed?

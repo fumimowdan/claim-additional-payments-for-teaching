@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_16_130634) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_16_170530) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
   enable_extension "pgcrypto"
@@ -208,6 +208,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_16_130634) do
     t.boolean "student_loan"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "irp_report_templates", force: :cascade do |t|
+    t.string "report_class"
+    t.string "filename"
+    t.binary "file"
+    t.jsonb "config"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["report_class"], name: "index_irp_report_templates_on_report_class", unique: true
   end
 
   create_table "levelling_up_premium_payments_awards", force: :cascade do |t|

@@ -5,7 +5,7 @@ class ClaimMailer < ApplicationMailer
 
   def submitted(claim)
     set_common_instance_variables(claim)
-    if [StudentLoans, EarlyCareerPayments, LevellingUpPremiumPayments].include?(claim.policy)
+    if [StudentLoans, EarlyCareerPayments, LevellingUpPremiumPayments, Irp].include?(claim.policy)
       personalisation = {
         first_name: @claim.first_name,
         ref_number: @claim.reference,
@@ -23,7 +23,7 @@ class ClaimMailer < ApplicationMailer
   def approved(claim)
     set_common_instance_variables(claim)
 
-    if [StudentLoans, EarlyCareerPayments, LevellingUpPremiumPayments].include?(claim.policy)
+    if [StudentLoans, EarlyCareerPayments, LevellingUpPremiumPayments, Irp].include?(claim.policy)
       personalisation = {
         first_name: @claim.first_name,
         ref_number: @claim.reference,
@@ -41,7 +41,7 @@ class ClaimMailer < ApplicationMailer
   def rejected(claim)
     set_common_instance_variables(claim)
 
-    if [StudentLoans, EarlyCareerPayments, LevellingUpPremiumPayments].include?(claim.policy)
+    if [StudentLoans, EarlyCareerPayments, LevellingUpPremiumPayments, Irp].include?(claim.policy)
       personalisation = {
         first_name: @claim.first_name,
         ref_number: @claim.reference,
@@ -62,7 +62,7 @@ class ClaimMailer < ApplicationMailer
   def update_after_three_weeks(claim)
     set_common_instance_variables(claim)
 
-    if [StudentLoans, EarlyCareerPayments, LevellingUpPremiumPayments].include?(claim.policy)
+    if [StudentLoans, EarlyCareerPayments, LevellingUpPremiumPayments, Irp].include?(claim.policy)
       personalisation = {
         first_name: @claim.first_name,
         ref_number: @claim.reference,

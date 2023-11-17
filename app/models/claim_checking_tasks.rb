@@ -12,7 +12,7 @@ class ClaimCheckingTasks
   def applicable_task_names
     return task_names_for_claim if claim.policy == Irp
 
-    @applicable_task_names ||= Task::NAMES.dup.tap do |task_names|
+    @applicable_task_names ||= Task::DEFAULT_TASK_NAMES.dup.tap do |task_names|
       task_names.delete("induction_confirmation") unless claim.policy == EarlyCareerPayments
       task_names.delete("census_subjects_taught") if claim.policy == MathsAndPhysics
       task_names.delete("student_loan_amount") unless claim.policy == StudentLoans

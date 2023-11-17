@@ -133,8 +133,10 @@ en:
       student_loan_amount: "Check student loan amount"
       payroll_details: "Check bank/building society account details"
       census_subjects_taught: "Check eligible subjects are taught"
-      home_office: Check the claimant with the Home Office
-      school_checks: Check the claimant school employment
+      send_home_office_email: Check the claimant with the Home Office
+      evaluate_home_office_response: Check Home office response for claimant
+      send_school_email: Start school checks journey
+      evaluate_school_response: Check claimant employment information
     undo_decision:
       approved: "Undo approval"
       rejected: "Undo rejection"

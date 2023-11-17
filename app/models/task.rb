@@ -7,7 +7,7 @@
 # It records who completed the task and the date/time the action was carried
 # out.
 class Task < ApplicationRecord
-  NAMES = %w[
+  DEFAULT_TASK_NAMES = %w[
     identity_confirmation
     qualifications
     induction_confirmation
@@ -17,8 +17,18 @@ class Task < ApplicationRecord
     payroll_details
     matching_details
     payroll_gender
-    home_office
-    school_checks
+ ].freeze
+
+  IRP_TASK_NAMES = %w[
+    send_home_office_email
+    evaluate_home_office_response
+    send_school_email
+    evaluate_school_response
+  ].freeze
+
+  NAMES = [
+    *DEFAULT_TASK_NAMES,
+    *IRP_TASK_NAMES,
   ].freeze
 
   belongs_to :claim

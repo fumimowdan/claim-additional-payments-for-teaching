@@ -14,7 +14,7 @@ module Admin
       unless admin_signed_in?
         clear_session
         session[:requested_admin_path] = request.fullpath
-        redirect_to admin_sign_in_path
+        redirect_to main_app.admin_sign_in_path
       end
     end
 

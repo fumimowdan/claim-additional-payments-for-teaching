@@ -10,11 +10,12 @@
     <h2 class="govuk-heading-l"><%= @current_task_name.humanize %></h2>
   </div>
 
+  <% if @task.passed.nil? %>
     <div class="govuk-grid-column-two-thirds">
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            UAS Home Office
+            Home Office UES file
           </dt>
 
           <dd class="govuk-summary-list__value">
@@ -22,8 +23,8 @@
           </dd>
         </div>
       </dl>
-
     </div>
+  <% end %>
 
   <div class="govuk-grid-column-two-thirds">
     <% if !@task.passed.nil? %>

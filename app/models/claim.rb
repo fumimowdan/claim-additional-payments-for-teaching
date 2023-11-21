@@ -134,7 +134,7 @@ class Claim < ApplicationRecord
   enum bank_or_building_society: {personal_bank_account: 0, building_society: 1}
 
   has_many :decisions, dependent: :destroy
-  has_many :tasks, dependent: :destroy
+  has_many :tasks, -> { order(created_at: :asc) }, dependent: :destroy
   has_many :amendments, dependent: :destroy
   has_many :topups, dependent: :destroy
   has_many :notes, dependent: :destroy

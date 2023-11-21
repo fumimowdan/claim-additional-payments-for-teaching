@@ -10,29 +10,15 @@
     <h2 class="govuk-heading-l"><%= @current_task_name.humanize %></h2>
   </div>
 
+  <% if @tasks_presenter.school_answers %>
     <div class="govuk-grid-column-two-thirds">
-      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Works at school for more than a year
-          </dt>
-          <dd class="govuk-summary-list__value">
-            true
-          </dd>
-        </div>
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Teach subject for more than 50% of time
-          </dt>
-          <dd class="govuk-summary-list__value">
-            true
-          </dd>
-        </div>
-
-      </dl>
-
+    <%= render "admin/claims/answers", answers: @tasks_presenter.school_answers %>
     </div>
+  <% else %>
+    <div class="govuk-grid-column-two-thirds">
+      <p class="govuk-body">Waiting for school response</p>
+    </div>
+  <% end %>
 
   <div class="govuk-grid-column-two-thirds">
     <% if !@task.passed.nil? %>

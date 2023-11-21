@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_17_115943) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_21_122035) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
   enable_extension "pgcrypto"
@@ -224,6 +224,21 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_17_115943) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["report_class"], name: "index_irp_report_templates_on_report_class", unique: true
+  end
+
+  create_table "irp_school_forms", force: :cascade do |t|
+    t.boolean "best_person"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "email_address"
+    t.string "position"
+    t.boolean "employment_duration"
+    t.boolean "employment_start_date"
+    t.boolean "subject_taught"
+    t.uuid "claim_id"
+    t.datetime "submitted_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "levelling_up_premium_payments_awards", force: :cascade do |t|

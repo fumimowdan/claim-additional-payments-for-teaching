@@ -9,6 +9,14 @@
   <div class="govuk-grid-column-two-thirds">
     <h2 class="govuk-heading-l"><%= @current_task_name.humanize %></h2>
   </div>
+  <div class="govuk-grid-column-two-thirds">
+    <%= govuk_link_to(
+        "school form link for this claim",
+        irp.school_step_path(
+        name: 'verify',
+        ct: Irp::School::ClaimToken.new(claim_id: @claim.id).token),
+        target: '_blank') %>
+  </div>
 
   <div class="govuk-grid-column-two-thirds">
     <% if !@task.passed.nil? %>

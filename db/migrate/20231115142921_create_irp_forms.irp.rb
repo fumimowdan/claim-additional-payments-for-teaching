@@ -29,6 +29,7 @@ class CreateIrpForms < ActiveRecord::Migration[7.0]
       t.string :school_city
       t.string :school_postcode
       t.boolean :student_loan
+      t.uuid :school_id
 
       t.timestamps
     end
